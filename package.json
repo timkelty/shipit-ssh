@@ -1,7 +1,7 @@
 {
   "name": "shipit-ssh",
   "version": "1.0.1",
-  "description": "Open a remote shell with a Shipit command.",
+  "description": "Open an interactive remote shell with a Shipit command.",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -30,6 +30,7 @@
   "devDependencies": {
     "chai": "^1.10.0",
     "mocha": "^2.1.0",
+    "node-ssh": "0.0.8",
     "rewire": "^2.1.4",
     "shipit-cli": "^1.1.0",
     "sinon": "^1.12.2",
@@ -39,9 +40,7 @@
   "dependencies": {
     "bluebird": "^2.9.1",
     "chalk": "^0.5.1",
-    "lodash": "^2.4.1",
-    "path2": "^0.1.0",
-    "sprintf-js": "^1.0.2"
+    "lodash": "^2.4.1"
   },
   "readmeFile": "README.md"
 }
