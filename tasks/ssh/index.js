@@ -1,17 +1,13 @@
 var registerTask = require('../../lib/register-task');
 var getShipit = require('../../lib/get-shipit');
+var remoteInteractive = require('../../lib/remote-interactive');
 
 module.exports = function (gruntOrShipit) {
   var task = function task() {
     var shipit = getShipit(gruntOrShipit);
-    var server = Array.isArray(shipit.config.servers) ? shipit.config.servers[0] : shipit.config.servers;
-    var cmd = [
-      'ssh',
-      server,
-      '-t',
-        ['\'', 'cd', shipit.config.deployTo, ';bash --login', '\''].join(' ')
-    ];
-    return shipit.local(cmd.join(' '));
+    shipit = remoteInteractive(shipit);
+    var remoteCmd = ['cd', shipit.config.deployTo + ';', 'bash --login'].join(' ');
+    return shipit.remoteInteractive(remoteCmd);
   };
 
   registerTask(gruntOrShipit, 'ssh', task);
