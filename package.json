@@ -1,6 +1,6 @@
 {
   "name": "shipit-ssh",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Open an interactive remote shell with a Shipit command.",
   "main": "index.js",
   "directories": {
