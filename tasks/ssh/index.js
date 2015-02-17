@@ -11,6 +11,7 @@ module.exports = function (gruntOrShipit) {
 
     // Ask for server if array
     if (Array.isArray(shipit.config.servers)) {
+
       return inquirer.prompt([{
         type: 'list',
         name: 'server',
@@ -20,6 +21,7 @@ module.exports = function (gruntOrShipit) {
       }]).then(function(answers) {
         return shipit.remoteInteractive(answers.server, remoteCmd);
       });
+
     } else {
       return shipit.remoteInteractive(shipit.config.servers, remoteCmd);
     }
