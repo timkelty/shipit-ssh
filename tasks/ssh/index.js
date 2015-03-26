@@ -16,14 +16,14 @@ module.exports = function (gruntOrShipit) {
         type: 'list',
         name: 'server',
         message: 'Choose a server',
-        default: shipit.config.servers[0],
-        choices: shipit.config.servers,
+        default: servers[0],
+        choices: servers,
       }]).then(function(answers) {
         return shipit.remoteInteractive(answers.server, remoteCmd);
       });
 
     } else {
-      return shipit.remoteInteractive(shipit.config.servers[0], remoteCmd);
+      return shipit.remoteInteractive(servers[0], remoteCmd);
     }
 
   };
